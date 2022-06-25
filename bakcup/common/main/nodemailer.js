@@ -1,4 +1,4 @@
-//  nodemailer ê¸°ëŠ¥ ì‹œì‘
+//  nodemailer ±â´É ½ÃÀÛ
 const nodemailer = require('nodemailer');
 const email = {
     "host" : "smtp.mailtrap.io",
@@ -24,9 +24,9 @@ const send = async (option) => {
 let email_data = {
     from: 's48005623@gmai.com',
     to : 's48005623@gmai.com',
-    subject : 'nodemailer í…ŒìŠ¤íŠ¸ì…ë‹ˆë‹¤.',
-    text : 'nodejs í”„ë¡œì íŠ¸ nodemailer í…ŒìŠ¤íŠ¸'
+    subject : 'nodemailer Å×½ºÆ®ÀÔ´Ï´Ù.',
+    text : 'nodejs ÇÁ·ÎÁ§Æ® nodemailer Å×½ºÆ®'
 }
 
 send(email_data);
-//  nodemailer ê¸°ëŠ¥ ì¢…ë£Œ
+//  nodemailer ±â´É Á¾·á
