@@ -1,21 +1,28 @@
 const { REFUSED } = require('dns');
 const express = require('express');
+const path = require('path');
+const router = express.Router(); 
 const app = express();
 
-const server = app.listen(3000, () => {
+const http = require('http').createServer(app);
+const port = 5000;
+http.listen(5000, function(){
     console.log("=========Server Start=========");
-    console.log("========localhost:3000========");
+    console.log("========localhost:5000========");
+});
+ 
+ 
+module.exports = router; 
+ 
+app.use(express.static(__dirname + 'client/build'))
+
+app.get('/', (request, response) => {
+    response.sendFile(path.join(__dirname, 'client/build/index.html'))
 });
 
-app.set('react-project',__dirname + '/react-project/src');
-app.set('view engine', 'ejs');
-app.engine('html', require('ejs').renderFile);
-
-app.use(express.static(__dirname + '/react-project/build'))
-
-app.get('/', (req, res) => {
-    res.sendFile('index.html')
-})
+app.get('/study', (req, response) => {
+    response.sendFile(path.join(__dirname, '/client/build/study/begin.html')) 
+});
  
 
 // control e
